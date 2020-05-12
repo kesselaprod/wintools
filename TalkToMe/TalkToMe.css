@@ -1,0 +1,10 @@
+html,
+      body {
+        font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+        line-height: 1.5;
+        background: powderblue;
+        color: #001a1a;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
