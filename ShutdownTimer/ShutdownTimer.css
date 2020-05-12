@@ -1,0 +1,11 @@
+html,
+      body {
+        font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+        line-height: 1.5;
+        background: #0f0c29;  /* fallback for old browsers */
+        background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+        color: #BEE8BA;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
