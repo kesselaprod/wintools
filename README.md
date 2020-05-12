@@ -1,5 +1,7 @@
-# MSHTA_Tools
+# MSHTA Tools
 Combination of MS HTA, VBScript and JavaScript with a HTML/CSS framework (Bootstrap); some simple tools I made for fun. Uploaded them for backup purposes. By far not the best code but it works. You'd better off using Powershell, classic cmd/bat or some c#/visual basic .net winforms stuff if you plan to deploy windows apps. VBS with WSH/HTA is considered deprecated. For me it's an easy and elegant way to build some simple windows apps and design their GUI using popular frameworks. The interface is held in my native language (German). Get in touch with me if there are any translation issues or questions.
+
+Usage is simple. Just download the contents of the directory and run the app by double-clicking the .hta file.
 
 ## About
 
