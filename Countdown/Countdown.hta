@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta http-equiv="X-UA-Compatible" content="IE=10">
+
+    <title>Countdown</title>
+
+    <!-- Required -->
+    <hta:application id="TalkToMeApp" 
+    applicationname="sapitalker" 
+    border="none"
+    caption="no"
+    showintaskbar="no"
+    singleinstance="yes"
+    sysmenu="no"
+    windowstate="maximize">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    html,
+      body {
+        font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+        line-height: 1.5;
+        background: white;
+        color: black;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+
+    <script language="VBScript" src="Countdown.vbs"></script>
+
+  </head>
+
+  <body onload="vbscript:AppInit()">
+  <script type="text/javascript">
+    window.resizeTo(790,400);
+  </script>
+          <div class="container mt-2">
+              <div class="row">
+                <div class="col">
+                  <label for="NumberInput">Sekunden:</label>
+                  <input type="text" class="form-control form-control-sm" id="NumerInput" value="3400">
+                </div>
+              </div>
+            <div class="row mt-2">
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="vbscript:GetStarted()">Start</button>
+              </div>
+              <div class="col-4">
+                <button type="button" class="btn btn-primary" onclick="vbscript:AddNum()">+ 1</button>
+                <button type="button" class="btn btn-primary" onclick="vbscript:AddTen()">+ 10</button>
+                <button type="button" class="btn btn-primary" onclick="vbscript:AddHun()">+ 100</button>
+              </div>
+              <div class="col-4">
+                <button type="button" class="btn btn-info" onclick="vbscript:SubNum()">- 1</button>
+                <button type="button" class="btn btn-info" onclick="vbscript:SubTen()">- 10</button>
+                <button type="button" class="btn btn-info" onclick="vbscript:SubHun()">- 100</button>
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-danger" onclick="vbscript:Reset()">Reset</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col mt-1">
+                <small>Countdown Ticks/Schritte:</small><input type="text" class="form-control form-control-sm" id="TimeInput" value="10">
+                <small>Methode:</small>
+                <select class="form-control form-control-sm" id="MethodSelect">
+                  <option selected>Subtrahiere 1</option>
+                  <option>Subtrahiere 10</option>
+                  <option>Subtrahiere 100</option>
+                  <option>Addiere 1</option>
+                  <option>Addiere 10</option>
+                  <option>Addiere 100</option>
+                </select>
+                <br /><span id="timer"></span>
+              </div>
+            </div>
+          </div>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
