@@ -1,0 +1,11 @@
+html,
+      body {
+        font-family: "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+        line-height: 1.5;
+        background: rgb(236,239,250);
+        background: radial-gradient(circle, rgba(236,239,250,1) 0%, rgba(226,217,206,1) 39%, rgba(124,151,157,1) 100%);
+        color: rgb(0, 47, 109);
+        height: 100%;
+        margin: 0;
+        overflow: auto;
+      }

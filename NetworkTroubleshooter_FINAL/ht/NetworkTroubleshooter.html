@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="../css/bootstrap.css">
+
+        <!-- Fonts -->
+        <link href="../css/googlefont.css" rel="stylesheet">
+
+        <!-- Custom -->
+        <link rel="stylesheet" href="../css/NetworkTroubleshooter.css">
+
+        <script language="VBScript" src="../vbs/NetworkTroubleshooter.vbs"></script>
+
+    </head>
+    <body onload="vbscript:AppInit()">
+    <div class="container-fluid mt-3">
+      <div class="row">
+      <div class="col">
+        <h4 class="bg-primary text-light p-2 text-center font-weight-bold">Falls Internetschwierigkeiten auftreten</h4>
+        <hr />
+      </div>
+
+      </div>
+        <div class="row mt-2">
+            <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Checkliste</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Internet testen</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Internet zurücksetzen</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Letzter Schritt</a>
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                  
+<h4>Bitte folgendes überprüfen:</h4>
+<ul class="list-group mb-2">
+  <li class="list-group-item list-group-item-info">
+    
+    <img src="../img/router.png" class="rounded float-left mr-2" alt="router">
+
+    <span class="font-weight-bold">Funktioniert der Router/das Modem noch?</span> Diese bitte eine Minute vom Strom trennen und erneut anschließen.
+
+  </li>
+  <li class="list-group-item list-group-item-info"><img src="../img/cable.png" class="rounded float-left mr-2" alt="router">
+
+    <span class="font-weight-bold">Alle Kabel ganz und richtig angeschlossen?</span> Kabel ggf. austauschen und an einen anderen LAN-Steckplatz am Router stecken
+  
+  </li>
+  <li class="list-group-item list-group-item-info">
+    
+    <img src="../img/wlan.png" class="rounded float-left mr-2" alt="router">
+
+    <span class="font-weight-bold">Funktioniert WLAN?</span> Bitte mit einem Smartphone oder Laptop schauen ob WLAN noch geht.
+
+  </li>
+</ul>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+<form class="d-flex flex-column">
+  <div class="form-row">
+    <div class="col">
+      <h5 class="font-weight-bold">Router-Adresse eintragen:</h5>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+        <input type="text" class="form-control" id="RouterAddressInput" placeholder="http://192.168.1.1">
+    </div>
+    <div class="col text-left">
+      <button type="button" class="btn btn-success btn-sm" onclick="vbscript:PopRouterWebInterface()">Im Browser öffnen</button>
+    </div>
+  </div>
+  <div class="form-row mt-2 text-left">
+    <div class="col-10">
+            <small>
+              Ist die Router-Adresse aufrufbar, ist die Verbindung zwischen PC und Router OK. Die Adresse befindet sich auf der Rückseite des Routers oder im Handbuch. Nach dem Öffnen wird die Adresse automatisch auf dem PC gespeichert.
+            </small>
+            <br />
+            <hr />
+    </div>
+    <div class="col">
+      &nbsp;
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-7">
+      <img src="../img/win.png" alt="Win-Logo" class="rounded float-left mr-2"><small>Windows-Netzwerk-Problembehandlung</small>
+    </div>
+    <div class="col text-left">
+      <button type="button" class="btn btn-warning btn-sm text-white border border-dark" onclick="vbscript:OpenWinNetTrblshooter()">Starten</button>
+    </div>
+  </div>
+  <div class="form-row text-center">
+    <div class="col-10 p-1">
+      <hr />
+      <button type="button" class="btn btn-primary" onclick="vbscript:CheckConnection()">Verbindung testen</button>
+    </div>
+    <div class="col">
+      &nbsp;
+    </div>
+  </div>
+  <div class="form-row mt-2">
+    <div class="col-10">
+      Ergebnis: <span id="checkResult">&nbsp;</span>
+    </div>
+    <div class="col">
+      &nbsp;
+    </div>
+  </div>
+</form>
+
+
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                  <h4>Verbindung zurücksetzen</h4>
+<form>
+  <div class="form-row">
+    <div class="col-9">
+      <div class="card text-white bg-info">
+        <div class="card-body">
+          Deine lokalen Netzwerkeinstellungen werden zurückgesetzt (<span class="font-weight-bold">ipconfig</span>) und die Betriebssystem-Netzwerkschnittstelle erneuert (<span class="font-weight-bold">netsh</span>). Anschließend empfiehlt es sich den Rechner <span class="font-weight-bold">neuzustarten</span>!
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      &nbsp;
+    </div>
+  </div>
+  <div class="form-row mt-3">
+      <div class="form-group col">
+        <button type="button" class="btn btn-warning" onclick="vbscript:ResetConnection()">Verbindung zurücksetzen</button>
+      </div>
+  </div>
+  <div class="form-row p-1">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+      <label class="form-check-label" for="gridCheck">
+        <small>Computer neu starten</small>
+      </label>
+    </div>
+  </div>
+</form>
+
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                  <h4>Letzte Schritte</h4>
+                  <ul class="list-group mb-2">
+                    <li class="list-group-item list-group-item-secondary">
+                      <img src="../img/arrow.png" class="rounded float-left mr-2" alt="arrow">
+                      <span class="badge badge-pill badge-warning">(Sofern vorhanden)</span> Gekauftes Antivirenprogramm inklusive Firewall deaktivieren
+                    </li>
+                    <li class="list-group-item list-group-item-secondary">
+                      <img src="../img/arrow.png" class="rounded float-left mr-2" alt="arrow">
+                      <span class="badge badge-pill badge-warning">(Sofern vorhanden)</span> Mit mobilen Datenzugang über das Smartphone z.B. unter allestörungen.de oder in den sozialen Netzwerken schauen ob der Internetanbieter eine Störung hat
+                    </li>
+                    <li class="list-group-item list-group-item-secondary">
+                      <img src="../img/arrow.png" class="rounded float-left mr-2" alt="arrow">
+                      Internetanbieter telefonisch kontaktieren und nach einer Störung fragen
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+          </div>    
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.js"></script>
+
+    </body>
+</html>

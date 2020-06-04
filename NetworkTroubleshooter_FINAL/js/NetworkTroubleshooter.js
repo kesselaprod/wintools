@@ -1,0 +1,1 @@
+window.resizeTo(720,550);
