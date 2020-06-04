@@ -83,6 +83,8 @@ pCustomInputSanitized = Replace(pCustomInput, ".",",")
 RegexObj.Pattern = "(((http:\/\/)|(https:\/\/))(([A-z]+\.{1}[A-z]+\.?[A-z]+)|([0-9]{1,3}\.{1}[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})))"
 ```
 
+The app also offers access to windows 10 internal troubleshooter for network diagnostics **msdt.exe** (which has to be issued elevated **runas** in order to get started properly).
+
 ### Last but not least
 
 **RDPShadow_Session.vbs** is a simple script to remotely pull the admin id with plink for RDP shadow session use and initialize the session. Replace:
