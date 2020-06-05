@@ -85,6 +85,16 @@ RegexObj.Pattern = "(((http:\/\/)|(https:\/\/))(([A-z]+\.{1}[A-z]+\.?[A-z]+)|([0
 
 The app also offers access to windows 10 internal troubleshooter for network diagnostics **msdt.exe** (which has to be issued elevated **runas** in order to get started properly).
 
+```
+ShellAppObj.ShellExecute "msdt.exe", ShellAppExecParameters, "", "runas", 1
+```
+
+Additionally there is a windows tool startup shortcut with the following options included:
+* **Target** = ```C:\Windows\System32\cmd.exe /c cd ht & start NetworkTroubleshooter.hta```
+* **Start in** = ```%cd%```
+
+This guarantees us that **cmd.exe** starts the program appropriately and uses the current directory (where the shortcut is located) as starting point.
+
 ### Last but not least
 
 **RDPShadow_Session.vbs** is a simple script to remotely pull the admin id with plink for RDP shadow session use and initialize the session. Replace:
