@@ -227,7 +227,7 @@ Class StringSanitizeManager
 
     Sub UpdateConnectionStatus()
 
-        If InStr(StringOutput, "Reply") > 0 Then
+        If InStr(StringOutput, "Reply") > 0 Or InStr(StringOutput, "Antwort") Then
 
             With document.getElementById("checkResult")
 
